@@ -6,6 +6,7 @@ namespace MvcBook.Controllers;
 
 public class HomeController : Controller
 {
+    //start here
     private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger)
