@@ -18,11 +18,21 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    public readonly AppDbContext _db;
+
+    public HomeController(AppDbContext db)
+    {
+        _db = db;
+    }
 
     public IActionResult Index()
     {
+        //Veritabanından veriler buraya gelicek 
+        //Dbsetadi ve DataModelAdı aşağıda yorum satırında bulunan koda eklenecek ve dummy datalar silinecek.
+
+        //List<DenemeData> books = _db.(DbSetName);
+
         //Dummy Datalar
-        //Veritabanından veriler buraya gelicek ama oluşturulan liste ismi değişmeyecek
         var books = new List<DenemeData>
     {
        new DenemeData{ Id=1, Adi="Deneme1", SayfaSayisi=25},
@@ -30,11 +40,12 @@ public class HomeController : Controller
        new DenemeData{ Id=3, Adi="Deneme3", SayfaSayisi=30},
        new DenemeData{ Id=4, Adi="Deneme4", SayfaSayisi=300}
     };
-        //Rastgele 3 kitap listeleme İşlemleri
+        //RASTGELE 3 KİTAP LİSTELEME İŞLEMLERİ
         var r = new Random();
+        //DenemeData gerçek data ile değiştirilecek
         var ThreeRandomBookList = new List<DenemeData>();
         ThreeRandomBookList = books.OrderBy(x => r.Next()).Take(3).ToList();
-        //Rastgele 3 kitap listeleme İşlemleri Bitiş 
+        //RASTGELE 3 KİTAP LİSTELEME İŞLEMLERİ BİTİŞ 
         return View(ThreeRandomBookList);
     }
 
