@@ -18,13 +18,14 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public readonly AppDbContext _db;
+    // public readonly AppDbContext _db;
 
-    public HomeController(AppDbContext db)
-    {
-        _db = db;
-    }
+    // public HomeController(AppDbContext db)
+    // {
+    //     _db = db;
+    // }
 
+    [HttpGet]
     public IActionResult Index()
     {
         //Veritabanından veriler buraya gelicek 
@@ -47,6 +48,31 @@ public class HomeController : Controller
         ThreeRandomBookList = books.OrderBy(x => r.Next()).Take(3).ToList();
         //RASTGELE 3 KİTAP LİSTELEME İŞLEMLERİ BİTİŞ 
         return View(ThreeRandomBookList);
+    }
+
+
+    public IActionResult UserLogin(KullaniciDenemeData userinfo)
+    {
+        //Dbsetadi ve DataModelAdı aşağıda yorum satırında bulunan koda eklenecek ve dummy datalar silinecek.
+        //List<KullaniciDenemeData> userData = _db.(DbSetName);
+        //Dummy Datalar
+        var userData = new List<KullaniciDenemeData>
+    {
+       new KullaniciDenemeData{username="deneme", userpass="0000"},
+       new KullaniciDenemeData{username="deneme1", userpass="1111"},
+       new KullaniciDenemeData{username="deneme2", userpass="2222"},
+    };
+
+    //Girilen kullanıcı adı ve şifre veri tabanında bulunan değer ile karşılaştırılıyor
+        var user = userData.FirstOrDefault(x => x.username == userinfo.username && x.userpass == userinfo.userpass);
+        if (user != null)
+        {
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            return View();
+        }
     }
 
 

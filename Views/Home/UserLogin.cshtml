@@ -1,0 +1,11 @@
+ @model MvcBook.Controllers.HomeController
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="UserLogin">
+    <input type="text" name="username" />
+
+    <input type="text" name="userpass" />
+    <input type="submit" value="login" asp-route-username="username"/>
+</form> 

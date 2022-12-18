@@ -6,4 +6,9 @@ namespace MvcWorkspace.Models
        public string Adi { get; set; }
        public int SayfaSayisi { get; set; }
     }
+     public class KullaniciDenemeData
+    {
+       public string username { get; set; }
+       public string userpass { get; set; }
+    }
 }
