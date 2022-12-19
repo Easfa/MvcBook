@@ -50,7 +50,7 @@ public class HomeController : Controller
         return View(ThreeRandomBookList);
     }
 
-
+    // [HttpPost] hata veriyor? 
     public IActionResult UserLogin(KullaniciDenemeData userinfo)
     {
         //Dbsetadi ve DataModelAdı aşağıda yorum satırında bulunan koda eklenecek ve dummy datalar silinecek.
