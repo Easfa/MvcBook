@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\sengu\\Desktop\\ProjeMVC\\MvcBook\\Views\\Books\\BooksInfo.cshtml",
+      "TargetPath": "Views\\Books\\BooksInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\sengu\\Desktop\\ProjeMVC\\MvcBook\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"

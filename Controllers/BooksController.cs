@@ -26,5 +26,9 @@ namespace MvcBook.Controllers
             };
             return View(books.ToList());
         }
+        public IActionResult BooksInfo()
+        { 
+            return View();
+        }
     }
 }
