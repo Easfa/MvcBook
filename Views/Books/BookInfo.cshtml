@@ -1,0 +1,21 @@
+@model MvcBook.Controllers.BooksController
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <table>
+
+        @foreach (var item in ViewBag.BookJoinComment)
+        {
+            
+                <tr>
+                    <td>@item.commentsbody</td>
+                    <td>@item.booksid</td>
+                    <td>@item.bookname</td>
+                </tr>
+ 
+        }
+           
+    </table>
+</div>
