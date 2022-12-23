@@ -47,16 +47,6 @@ namespace MvcBook.Controllers
             };
 
             //Bütün tablo elemanlarını tekrardan yazmak gerekiyor. bütün tabloyu yazdır dediğimde çalışmıyor?
-            ViewBag.BookJoinComment = comments.Join(
-                                books,
-                                comments => comments.B_Id,
-                                books => books.B_Id,
-                                (comments, books) => new
-                                {
-                                    commentsbody = comments.C_Body,
-                                    booksid = books.B_Id,
-                                    bookname = books.B_Name
-                                }).Where(x => x.booksid == id).ToList();
             return View();
 
         }
