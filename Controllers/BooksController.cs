@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MvcWorkspace.Data;
+using MvcBook.Models;
+using MvcBook.Models.ViewModels;
 using MvcWorkspace.Models;
 
 namespace MvcBook.Controllers
@@ -45,8 +46,10 @@ namespace MvcBook.Controllers
             new Books{ B_Id=3, B_Name="Deneme3", B_Page=30},
             new Books{ B_Id=4, B_Name="Deneme4", B_Page=300}
             };
+            BooksVM bvm = new BooksVM();
+            
+            //  IEnumerable<Commentaries> personels = comments.Include(p => p.Books);
 
-            //Bütün tablo elemanlarını tekrardan yazmak gerekiyor. bütün tabloyu yazdır dediğimde çalışmıyor?
             return View();
 
         }
