@@ -1,57 +1,77 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcBook.Models;
-using MvcBook.Models.ViewModels;
-using MvcWorkspace.Models;
+using MvcWorkspace.Data;
 
 namespace MvcBook.Controllers
 {
     public class BooksController : Controller
     {
-        // public readonly AppDbContext _db;
-
-        // public BooksController(AppDbContext db)
-        // {
-        //     _db = db;
-        // }
+        public readonly AppDbContext _db;
+        public BooksController(AppDbContext db)
+        {
+            _db = db;
+        }
 
         public IActionResult Index()
         {
-            //Dbsetadi ve DataModelAdı aşağıda yorum satırında bulunan koda eklenecek 
-            //List<DenemeData> books = _db.(DbSetName);
-            var books = new List<DenemeData>
-            {
-            new DenemeData{ Id=1, Adi="Deneme1", SayfaSayisi=25},
-            new DenemeData{ Id=2, Adi="Deneme2", SayfaSayisi=20},
-            new DenemeData{ Id=3, Adi="Deneme3", SayfaSayisi=30},
-            new DenemeData{ Id=4, Adi="Deneme4", SayfaSayisi=300}
-            };
-            return View(books.ToList());
+            //Dbsettn gelen books yazdırılıcak
+            return View(_db.books1.ToList());
         }
+        [HttpGet]
         public IActionResult BookInfo(int id)
         {
-            var comments = new List<Commentaries>
+            int a =id;
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BookInfo()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult CommentAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CommentAdd(Commentaries c)
+        {
+            _db.comments.Add(c);
+            var a = _db.comments;
+            _db.SaveChanges();
+            return View();
+        }
+        [HttpGet]
+        
+        public IActionResult CommentUpdate()
+        {
+            return View();
+        }
+        [HttpPost]
+
+        public IActionResult CommentUpdate(Commentaries c)
+        {
+            var comment = _db.comments.Where(i => i.C_Id == c.C_Id).FirstOrDefault();
+            if (comment != null)
             {
-              new Commentaries{C_Id= 1, B_Id= 2, C_Head="", C_Body=""},
-              new Commentaries{C_Id= 2, B_Id= 3, C_Head="", C_Body=""},
-              new Commentaries{C_Id= 3, B_Id= 1, C_Head="", C_Body="1 yorum"},
-              new Commentaries{C_Id= 4, B_Id= 3, C_Head="", C_Body=""},
-              new Commentaries{C_Id= 5, B_Id= 1, C_Head="", C_Body=""},
-              new Commentaries{C_Id= 6, B_Id= 1, C_Head="", C_Body="1yorkum"},
-              new Commentaries{C_Id= 7, B_Id= 2, C_Head="", C_Body="fdjkd"}
-            };
-            var books = new List<Books>
-            {
-            new Books{ B_Id=1, B_Name="Deneme1", B_Page=25},
-            new Books{ B_Id=2, B_Name="Deneme2", B_Page=20},
-            new Books{ B_Id=3, B_Name="Deneme3", B_Page=30},
-            new Books{ B_Id=4, B_Name="Deneme4", B_Page=300}
-            };
-            BooksVM bvm = new BooksVM();
-            
-            //  IEnumerable<Commentaries> personels = comments.Include(p => p.Books);
+                _db.Update(c);
+            }
+            _db.SaveChanges();
 
             return View();
 
         }
+        public IActionResult CommentDelete(int c)
+        {
+            var comment = _db.comments.Where(i => i.C_Id == c).FirstOrDefault();
+            if (comment == null)
+            {
+                return NotFound();
+            }
+            _db.comments.Remove(comment);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+       
     }
 }
