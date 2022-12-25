@@ -19,14 +19,14 @@ namespace MvcBook.Models
             return B_Id + " - " + B_Name + " - " + B_Author + " - " + B_Page;
         }
 
-        public string HtmlGenerator(Books book, string tag)
+        public string HtmlGenerator( string tag)
         {
             string ret = "";
             ret += "<" + tag + ">";
-                ret += @"<td>" + book.B_Id.ToString() + @"</td>";
-                ret += @"<td>" + book.B_Name + @"</td>";
-                ret += @"<td>" + book.B_Author + @"</td>";
-                ret += @"<td>" + book.B_Page + @"</td>";
+                ret += @"<td>" + B_Id.ToString() + @"</td>";
+                ret += @"<td>" + B_Name + @"</td>";
+                ret += @"<td>" + B_Author + @"</td>";
+                ret += @"<td>" + B_Page + @"</td>";
             return ret;
         }
 
