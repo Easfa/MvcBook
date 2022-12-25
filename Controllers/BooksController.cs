@@ -15,7 +15,7 @@ namespace MvcBook.Controllers
         public IActionResult Index()
         {
             //Dbsettn gelen books yazdırılıcak
-            return View(_db.books1.ToList());
+            return View(_db.Books.ToList());
         }
         [HttpGet]
         public IActionResult BookInfo(int id)
@@ -36,8 +36,8 @@ namespace MvcBook.Controllers
         [HttpPost]
         public IActionResult CommentAdd(Commentaries c)
         {
-            _db.comments.Add(c);
-            var a = _db.comments;
+            _db.Commentaries.Add(c);
+            var a = _db.Commentaries;
             _db.SaveChanges();
             return View();
         }
@@ -51,7 +51,7 @@ namespace MvcBook.Controllers
 
         public IActionResult CommentUpdate(Commentaries c)
         {
-            var comment = _db.comments.Where(i => i.C_Id == c.C_Id).FirstOrDefault();
+            var comment = _db.Commentaries.Where(i => i.C_Id == c.C_Id).FirstOrDefault();
             if (comment != null)
             {
                 _db.Update(c);
@@ -63,12 +63,12 @@ namespace MvcBook.Controllers
         }
         public IActionResult CommentDelete(int c)
         {
-            var comment = _db.comments.Where(i => i.C_Id == c).FirstOrDefault();
+            var comment = _db.Commentaries.Where(i => i.C_Id == c).FirstOrDefault();
             if (comment == null)
             {
                 return NotFound();
             }
-            _db.comments.Remove(comment);
+            _db.Commentaries.Remove(comment);
             _db.SaveChanges();
             return RedirectToAction("Index");
         }

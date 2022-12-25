@@ -68,3 +68,14 @@ C:\Users\sengu\Desktop\ProjeMVC\MvcBook\obj\Debug\net6.0\ref\MvcBook.dll
 C:\Users\sengu\Desktop\ProjeMVC\MvcBook\bin\Debug\net6.0\Microsoft.Owin.dll
 C:\Users\sengu\Desktop\ProjeMVC\MvcBook\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\sengu\Desktop\ProjeMVC\MvcBook\bin\Debug\net6.0\Owin.dll
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.csproj.AssemblyReference.cache
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.AssemblyInfoInputs.cache
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.AssemblyInfo.cs
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.csproj.CoreCompileInputs.cache
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.RazorAssemblyInfo.cache
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.RazorAssemblyInfo.cs
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.dll
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\refint\MvcBook.dll
+C:\Users\Easfa\Desktop\Bau\MvcBook\obj\Debug\net6.0\MvcBook.pdb

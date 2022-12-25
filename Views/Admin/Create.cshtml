@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Book>
+﻿@model IEnumerable<Books>
 @{
     ViewData["Title"] = "Create";
 }
@@ -26,15 +26,15 @@
                 {
                     <tr>
 
-                        <td width="20%">@item.Name</td>
-                        <td width="20%">@item.Author</td>
-                        <td width="20%">@item.Summary</td>
+                        <td width="20%">@item.B_Name</td>
+                        <td width="20%">@item.B_Author</td>
+                        <td width="20%">@item.B_Page</td>
                         <td class="text-center">
-                            <a asp-controller="" asp-action="" asp-route-id="@item.Id" class="btn btn-success">update</a>
+                            <a asp-controller="" asp-action="" asp-route-id="@item.B_Id" class="btn btn-success">update</a>
                             @*  Update işlemi*@
                         </td>
                         <td class="text-center">
-                            <a asp-controller="" asp-action="" asp-route-id="@item.Id" class="btn btn-danger mx-2">delete</a>
+                            <a asp-controller="" asp-action="" asp-route-id="@item.B_Id" class="btn btn-danger mx-2">delete</a>
                             @*  Delete işlemi*@
                         </td>
 

@@ -11,7 +11,7 @@ namespace MvcBook.Controllers
         {
             _db = db;
         }
-        public IActionResult Index(Admin admininfo)
+        /*public IActionResult Index(Admin admininfo)
         {
 
             //Girilen kullanıcı adı ve şifre veri tabanında bulunan değer ile karşılaştırılıyor
@@ -24,7 +24,7 @@ namespace MvcBook.Controllers
             {
                 return View();
             }
-        }
+        }*/
         [HttpGet]
         public IActionResult BookAdd()
         {
@@ -34,7 +34,7 @@ namespace MvcBook.Controllers
         
         public IActionResult BookAdd(Books b)
         {
-            _db.books.Add(b);
+            //_db.books.Add(b);
             return View();
         }
 
