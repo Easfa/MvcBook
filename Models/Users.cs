@@ -19,6 +19,6 @@ namespace MvcBook.Models
         public string U_Mail { get; set; }
         public string U_Bday { get; set; }
         public string U_SignupDay { get; set; }
-        private string Is_Admin { get; set; } // Kontrol edilecek?
+        public bool Is_Admin { get; set; } // Kontrol edilecek?
     }
 }
