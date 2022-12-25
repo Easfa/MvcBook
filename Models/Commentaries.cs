@@ -18,5 +18,10 @@ namespace MvcBook.Models
         public string C_Body { get; set; }
         [Required]
         public DateTime C_Date { get; set; }
+
+        public override string ToString()
+        {
+            return C_Head + " - " + C_Body + " - " + C_Date + " - ";
+        }
     }
 }
