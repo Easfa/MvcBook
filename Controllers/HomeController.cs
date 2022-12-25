@@ -17,21 +17,26 @@ public class HomeController : Controller
     }
 
 
-    /*[HttpGet]
+    [HttpGet]
     public IActionResult Index()
     {
         //RASTGELE 3 KİTAP LİSTELEME İŞLEMLERİ
         var r = new Random();
         //DenemeData gerçek data ile değiştirilecek
-        var ThreeRandomBookList = new List<DenemeData>();
-        ThreeRandomBookList = _db.books1.OrderBy(x => r.Next()).Take(3).ToList();
+        var Books = _db.Books.Select(x => x).ToList();
+        List<Books> ThreeRandomBookList= new List<Books>();
+
+        for(int i = 0; i <= 2; i++) 
+        {
+            ThreeRandomBookList.Add(Books[r.Next(Books.Count())]);
+        }
         //RASTGELE 3 KİTAP LİSTELEME İŞLEMLERİ BİTİŞ 
         return View(ThreeRandomBookList);
     }
     
-    public IActionResult UserLogin(KullaniciDenemeData userinfo)
+    public IActionResult UserLogin(Users userinfo)
     {
-        var user = _db.userData.FirstOrDefault(x => x.username == userinfo.username && x.userpass == userinfo.userpass);
+        var user = _db.Users.FirstOrDefault(x => x.U_Name == userinfo.U_Name && x.U_Password == userinfo.U_Password);
         if (user != null)
         {
             return RedirectToAction("Index");
@@ -46,5 +51,5 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }*/
+    }
 }

@@ -7,12 +7,13 @@ namespace MvcBook.Models
     {
         private List<Books> Book { get; set; }
         [Key]
-        [Required]
-        public virtual Users B_Id { get; set; }
+        public int B_Id { get; set; }
         [Required]
         public string B_Name { get; set; }
+        public string B_Coantents { get; set; }
         public string B_Author { get; set; }
         public string B_Page { get; set; }
+        public string ImgTitle { get; set; }
 
         public override string ToString()
         {

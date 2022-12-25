@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcBook.Models
@@ -8,16 +9,22 @@ namespace MvcBook.Models
         [Key]
         [Required]
         public int C_Id { get; set; }
-        [InverseProperty("B_Id")]  //Test edilecek...
-        [Required]
-        public virtual ICollection<Books> B_Id { get; set; }
-        [InverseProperty("U_Id")]  //Test edilecek...
-        [Required]
-        public virtual ICollection<Users> U_Id { get; set; }
+
+        [ForeignKey("Users")]
+        public int U_Id { get; set; }
+        [ValidateNever]
+        public Users Users { get; set; }
+
+
+        [ForeignKey("Books")]
+        public int B_Id { get; set; }
+        [ValidateNever]
+        public Books Books { get; set; }
+
         public string C_Head { get; set; }
         public string C_Body { get; set; }
         [Required]
-        public DateTime C_Date { get; set; }
+        public DateTime C_Date { get; set; } = DateTime.Now;
 
         public override string ToString()
         {

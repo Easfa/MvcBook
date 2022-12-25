@@ -6,8 +6,7 @@ namespace MvcBook.Models
     public class Users
     {
         [Key]
-        [Required]
-        public virtual Users U_Id { get; set; }
+        public int U_Id { get; set; }
         [Required]
         public string U_Name { get; set; }
         [Required]
@@ -17,8 +16,8 @@ namespace MvcBook.Models
         public string U_Password { get; set; }
         [Required]
         public string U_Mail { get; set; }
-        public string U_Bday { get; set; }
-        public string U_SignupDay { get; set; }
+        public DateTime? U_Bday { get; set; }
+        public DateTime U_SignupDay { get; set; } = DateTime.Now;
         public bool Is_Admin { get; set; } // Kontrol edilecek?
     }
 }
