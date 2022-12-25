@@ -5,8 +5,9 @@ namespace MvcWorkspace.Data
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions options): base(options) { }
+        public AppDbContext(DbContextOptions options) : base(options) { }
 
+       
         //DbSets Area
         public DbSet<Books> Books { get; set; }
         public DbSet<Commentaries> Commentaries { get; set; }
