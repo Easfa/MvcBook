@@ -1,0 +1,61 @@
+﻿@model 
+@{
+    ViewData["Title"] = "BookInfo";
+}
+
+<div class="container">
+
+
+    @foreach (var item in Model)
+    {
+        <div class="h2 pb-2 mb-4 text-success border-bottom border-success">
+            @item.Name
+        </div>
+
+        <div align="center" >
+            <img class=" align-center mb-15" src="~/images/Book/@item.İmgTitle">
+        </div>
+
+        <br>
+        <div class="col-12 text-success">
+            <h3 class="text-success mb-1"> Book Author:@item.Author</h3> <br>
+            
+        </div>
+       
+        <div class="col-12 text-success">
+            <h3 class="text-success mb-1"> Book Summary</h3> 
+            <p>@item.Page</p>
+        </div>
+        <div></div>
+
+        <div>
+        </div>
+
+    }
+</div>
+
+    @* yorumlar için yazdım ama toparlayamadım*@
+@*
+    <form method="post" asp-action="">
+    <div class="heading col-6">
+        <h3 class="text text-large text-success">Comment</h3>
+        <input type="hidden" asp-for="Id" />
+      
+    </div>
+    <div class="mb-3">
+        <label asp-for="" class="form-label text-success">Email address</label>
+        <input asp-for="" class="form-control" placeholder="name@example.com">
+        <span asp-validation-for="" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="" class="form-label text-success">Comment on the book</label>
+        <textarea asp-for=""  class="form-control" rows="3"></textarea>
+        <span asp-validation-for="" class="text-danger"></span>
+    </div>
+    
+    <div class=" col-6 mb-3">
+        <button asp-controller="" asp-action="" asp-route-id="" type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+
+</form>*@
